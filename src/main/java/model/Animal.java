@@ -5,13 +5,13 @@ import java.time.LocalDate;
 public class Animal {
 
     private String name;
-    private String personality;
+    private Personality personality;
     private String species;
     private String speakingHabit;
     private LocalDate birth;
     private Gender gender;
 
-    public Animal(String name, String personality, String species, String speakingHabit, LocalDate birth, Gender gender) {
+    public Animal(String name, Personality personality, String species, String speakingHabit, LocalDate birth, Gender gender) {
         this.name = name;
         this.personality = personality;
         this.species = species;
@@ -28,11 +28,11 @@ public class Animal {
         this.name = name;
     }
 
-    public String getPersonality() {
+    public Personality getPersonality() {
         return personality;
     }
 
-    public void setPersonality(String personality) {
+    public void setPersonality(Personality personality) {
         this.personality = personality;
     }
 

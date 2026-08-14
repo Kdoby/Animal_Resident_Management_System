@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Animal {
 
+    private int animaId;
     private String name;
     private Personality personality;
     private String species;
@@ -11,13 +12,22 @@ public class Animal {
     private LocalDate birth;
     private Gender gender;
 
-    public Animal(String name, Personality personality, String species, String speakingHabit, LocalDate birth, Gender gender) {
+    public Animal(int animaId, String name, Personality personality, String species, String speakingHabit, LocalDate birth, Gender gender) {
+        this.animaId = animaId;
         this.name = name;
         this.personality = personality;
         this.species = species;
         this.speakingHabit = speakingHabit;
         this.birth = birth;
         this.gender = gender;
+    }
+
+    public int getAnimaId() {
+        return animaId;
+    }
+
+    public void setAnimaId(int animaId) {
+        this.animaId = animaId;
     }
 
     public String getName() {

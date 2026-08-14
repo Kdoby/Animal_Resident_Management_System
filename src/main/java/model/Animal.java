@@ -1,0 +1,70 @@
+package model;
+
+import java.time.LocalDate;
+
+public class Animal {
+
+    private String name;
+    private String personality;
+    private String species;
+    private String speakingHabit;
+    private LocalDate birth;
+    private Gender gender;
+
+    public Animal(String name, String personality, String species, String speakingHabit, LocalDate birth, Gender gender) {
+        this.name = name;
+        this.personality = personality;
+        this.species = species;
+        this.speakingHabit = speakingHabit;
+        this.birth = birth;
+        this.gender = gender;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPersonality() {
+        return personality;
+    }
+
+    public void setPersonality(String personality) {
+        this.personality = personality;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public String getSpeakingHabit() {
+        return speakingHabit;
+    }
+
+    public void setSpeakingHabit(String speakingHabit) {
+        this.speakingHabit = speakingHabit;
+    }
+
+    public LocalDate getBirth() {
+        return birth;
+    }
+
+    public void setBirth(LocalDate birth) {
+        this.birth = birth;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+}

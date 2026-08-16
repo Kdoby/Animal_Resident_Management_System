@@ -1,5 +1,6 @@
 package repository;
 
+import exception.AnimalNotFoundException;
 import model.Animal;
 
 import java.util.ArrayList;
@@ -25,11 +26,11 @@ public class AnimalRepositoryImpl implements AnimalRepository {
        return animals.stream()
                .filter(animal -> animal.getAnimaId() == id)
                .findFirst()
-               .orElse(null);
+               .orElseThrow(AnimalNotFoundException::new);
     }
 
     @Override
-    public void save(Animal animal){
+    public void save(Animal animal) {
 
         animal.setAnimaId(nextAnimalId++);
         animals.add(animal);
@@ -51,6 +52,8 @@ public class AnimalRepositoryImpl implements AnimalRepository {
     @Override
     public void delete(int id){
 
-        animals.removeIf(animal -> animal.getAnimaId() == id);
+        Animal delAnimal = findById(id);
+
+        animals.remove(delAnimal);
     }
 }

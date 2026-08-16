@@ -12,8 +12,7 @@ public class Animal {
     private LocalDate birth;
     private Gender gender;
 
-    public Animal(int animaId, String name, Personality personality, String species, String speakingHabit, LocalDate birth, Gender gender) {
-        this.animaId = animaId;
+    public Animal(String name, Personality personality, String species, String speakingHabit, LocalDate birth, Gender gender) {
         this.name = name;
         this.personality = personality;
         this.species = species;

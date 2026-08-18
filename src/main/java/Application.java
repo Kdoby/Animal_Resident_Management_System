@@ -1,6 +1,5 @@
 import controller.AnimalController;
 import exception.AnimalNotFoundException;
-import exception.InvalidInputException;
 import model.Animal;
 import model.Gender;
 import model.Personality;
@@ -16,7 +15,6 @@ public class Application {
         AnimalController animalController = new AnimalController(animalView);
 
         System.out.println("Welcome to Animal Management");
-
 
         while (true) {
 
@@ -47,7 +45,7 @@ public class Application {
                     default:
                         animalView.displayError("Invalid Choice");
                 }
-            } catch (InvalidInputException | AnimalNotFoundException e) {
+            } catch (AnimalNotFoundException e) {
                 animalView.displayError(e.getMessage());
             } catch (Exception e) {
                 System.out.println("알 수 없는 에러가 발생했습니다. 다시 입력해주세요.");
@@ -56,6 +54,10 @@ public class Application {
     }
 
     private static void registerAnimal(AnimalView animalView, AnimalController animalController) {
+
+        System.out.println("=====================================");
+        System.out.println("            Animal Register          ");
+        System.out.println("=====================================");
 
         String name = animalView.readLine("Enter name: ");
         Personality personality = animalView.readPersonality("Enter Animal Personality: ");
@@ -76,7 +78,16 @@ public class Application {
 
     private static void updateAnimal(AnimalView animalView, AnimalController animalController) {
 
-        int id = animalView.readInt("Enter ID: ");
+        System.out.println("=====================================");
+        System.out.println("            Animal Update            ");
+        System.out.println("=====================================");
+
+        int id = animalView.readInt("Enter animal ID You want to update: ");
+
+        // 기존 정보 조회
+        animalController.getAnimalById(id);
+        System.out.println("============= Please enter the changes ==============");
+
         String name = animalView.readLine("Enter name: ");
         Personality personality = animalView.readPersonality("Enter Animal Personality: ");
         String species = animalView.readLine("Enter Animal Species: ");
@@ -95,8 +106,28 @@ public class Application {
     }
 
     public static void deleteAnimal(AnimalView animalView, AnimalController animalController) {
+
+        System.out.println("=====================================");
+        System.out.println("            Animal Delete            ");
+        System.out.println("=====================================");
+
         int id = Integer.parseInt(animalView.readLine("Enter ID: "));
 
-        animalController.delete(id);
+        // 현재 정보 조회
+        animalController.getAnimalById(id);
+
+        while (true) {
+            String confirm = animalView.readLine("정말 삭제하시겠습니까? (Y / N)");
+
+            if (confirm.equalsIgnoreCase("y")) {
+                animalController.delete(id);
+                return;
+            } else if (confirm.equalsIgnoreCase("n")) {
+                animalView.displayMessage("Deletion successfully canceled");
+                return;
+            }
+
+            animalView.displayError("Y/N 중 하나를 선택하세요");
+        }
     }
 }

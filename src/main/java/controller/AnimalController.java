@@ -1,5 +1,6 @@
 package controller;
 
+import exception.AnimalNotFoundException;
 import model.Animal;
 import repository.AnimalRepository;
 import repository.AnimalRepositoryImpl;
@@ -11,6 +12,7 @@ public class AnimalController {
     private AnimalView view;
 
     public AnimalController(AnimalView view) {
+
         animalRepository = new AnimalRepositoryImpl();
         this.view = view;
     }
@@ -28,31 +30,19 @@ public class AnimalController {
 
     public void registerAnimal(Animal animal) {
 
-        try {
-            animalRepository.save(animal);
-            view.displaySuccess("Animal registered successfully!");
-        } catch (Exception e) {
-            view.displayError(e.getMessage());
-        }
+        animalRepository.save(animal);
+        view.displaySuccess("Animal registered successfully!");
     }
 
     public void updateAnimal(int id, Animal animal) {
 
-        try {
-            animalRepository.update(id, animal);
-            view.displaySuccess("Animal updated successfully!");
-        } catch (Exception e) {
-            view.displayError(e.getMessage());
-        }
+        animalRepository.update(id, animal);
+        view.displaySuccess("Animal updated successfully!");
     }
 
     public void delete(int id) {
 
-        try {
-            animalRepository.delete(id);
-            view.displaySuccess("Animal deleted successfully!");
-        } catch (Exception e) {
-            view.displayError(e.getMessage());
-        }
+        animalRepository.delete(id);
+        view.displaySuccess("Animal deleted successfully!");
     }
 }

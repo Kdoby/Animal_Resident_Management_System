@@ -1,4 +1,5 @@
 import controller.AnimalController;
+import exception.AnimalCapacityExceedException;
 import exception.AnimalNotFoundException;
 import model.Animal;
 import model.Gender;
@@ -45,7 +46,7 @@ public class Application {
                     default:
                         animalView.displayError("Invalid Choice");
                 }
-            } catch (AnimalNotFoundException e) {
+            } catch (AnimalNotFoundException | AnimalCapacityExceedException e) {
                 animalView.displayError(e.getMessage());
             } catch (Exception e) {
                 System.out.println("알 수 없는 에러가 발생했습니다. 다시 입력해주세요.");
@@ -58,6 +59,9 @@ public class Application {
         System.out.println("=====================================");
         System.out.println("            Animal Register          ");
         System.out.println("=====================================");
+
+        // 최대 수용 가능 인원 초과 여부 확인
+        animalController.checkAnimalCapacity();
 
         String name = animalView.readLine("Enter name: ");
         Personality personality = animalView.readPersonality("Enter Animal Personality: ");

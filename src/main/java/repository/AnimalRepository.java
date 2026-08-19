@@ -7,8 +7,14 @@ import java.util.List;
 public interface AnimalRepository {
 
     List<Animal> findAll();
+
     Animal findById(int id);
+
     void save(Animal animal);
+
     void update(int id, Animal animal);
+
     void delete(int id);
+
+    void isFull();
 }

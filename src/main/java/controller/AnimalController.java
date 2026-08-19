@@ -8,8 +8,8 @@ import view.AnimalView;
 
 public class AnimalController {
 
-    private AnimalRepository animalRepository;
-    private AnimalView view;
+    private final AnimalRepository animalRepository;
+    private final AnimalView view;
 
     public AnimalController(AnimalView view) {
 
@@ -44,5 +44,9 @@ public class AnimalController {
 
         animalRepository.delete(id);
         view.displaySuccess("Animal deleted successfully!");
+    }
+
+    public void checkAnimalCapacity() {
+        animalRepository.isFull();
     }
 }

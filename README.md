@@ -27,12 +27,7 @@
 
 ## 2. 실행 방법
 
-이 프로젝트는 별도의 `application` 플러그인 설정 없이 순수 `java` 플러그인만 사용하며, 모든 클래스가 `com.ohgiraffers.animalmanagementsystem` 패키지(그 하위 `model`/`view`/`controller`/`repository`/`exception`) 아래에 있습니다. IntelliJ 등 IDE에서 `Application.java`의 `main()`을 직접 실행하거나, 아래처럼 Gradle로 빌드 후 실행할 수 있습니다.
-
-```bash
-./gradlew build
-java -cp build/classes/java/main com.ohgiraffers.animalmanagementsystem.Application
-```
+이 프로젝트는 별도의 `application` 플러그인 설정 없이 순수 `java` 플러그인만 사용하며, 모든 클래스가 `com.ohgiraffers.animalmanagementsystem` 패키지(그 하위 `model`/`view`/`controller`/`repository`/`exception`) 아래에 있습니다. IntelliJ 등 IDE에서 `Application.java`의 `main()`을 직접 실행하여 동작을 확인할 수 있습니다.
 
 <br>
 

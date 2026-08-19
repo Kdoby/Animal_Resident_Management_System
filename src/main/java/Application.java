@@ -40,6 +40,10 @@ public class Application {
                     case 5:
                         animalController.getAllAnimals();
                         break;
+                    case 6:
+                        String name = animalView.readLine("Enter name you want to find: ");
+                        animalController.getAnimalByName(name);
+                        break;
                     case 0:
                         animalView.displayMessage("프로그램을 종료합니다.");
                         return;

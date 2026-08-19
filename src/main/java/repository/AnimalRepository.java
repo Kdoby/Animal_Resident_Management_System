@@ -10,6 +10,8 @@ public interface AnimalRepository {
 
     Animal findById(int id);
 
+    Animal searchByName(String name);
+
     void save(Animal animal);
 
     void update(int id, Animal animal);

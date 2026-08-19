@@ -71,6 +71,15 @@ public class AnimalRepositoryImpl implements AnimalRepository {
     }
 
     @Override
+    public Animal searchByName(String name) {
+
+        return animals.stream()
+                .filter(animal -> animal.getName().equals(name))
+                .findFirst()
+                .orElseThrow(AnimalNotFoundException::new);
+    }
+
+    @Override
     public void save(Animal animal) {
 
         if (animals.size() >= 10) {

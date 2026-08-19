@@ -37,6 +37,7 @@ public class AnimalView {
         System.out.println("3. Delete Animal");
         System.out.println("4. Find An Animal");
         System.out.println("5. Find All Animals");
+        System.out.println("6. Search Animal By Name");
         System.out.println("0. Exit");
     }
 
@@ -140,7 +141,7 @@ public class AnimalView {
     }
 
     private void printAnimalDetail(Animal animal) {
-        
+
         System.out.println("name : " + animal.getName());
         System.out.println("personality : " + animal.getPersonality());
         System.out.println("species : " + animal.getSpecies());

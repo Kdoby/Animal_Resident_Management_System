@@ -28,6 +28,12 @@ public class AnimalController {
         view.displayAnimalInfo(animal);
     }
 
+    public void getAnimalByName(String name) {
+
+        Animal animal = animalRepository.searchByName(name);
+        view.displayAnimalInfo(animal);
+    }
+
     public void registerAnimal(Animal animal) {
 
         animalRepository.save(animal);

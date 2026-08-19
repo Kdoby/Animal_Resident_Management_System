@@ -55,4 +55,8 @@ public class AnimalController {
     public void checkAnimalCapacity() {
         animalRepository.isFull();
     }
+
+    public void getAnimalsGroupByPersonality() {
+        view.displayPersonalityStatistics(animalRepository.findAnimalsGroupByPersonality());
+    }
 }

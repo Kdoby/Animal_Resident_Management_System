@@ -9,6 +9,8 @@ import model.Personality;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AnimalRepositoryImpl implements AnimalRepository {
 
@@ -117,5 +119,13 @@ public class AnimalRepositoryImpl implements AnimalRepository {
         if (animals.size() >= 10) {
             throw new AnimalCapacityExceedException();
         }
+    }
+
+    @Override
+    public Map<Personality, Long> findAnimalsGroupByPersonality() {
+
+        // 마을 안에 각 성격별로 몇명의 주민이 있는지
+        return animals.stream()
+                .collect(Collectors.groupingBy(Animal::getPersonality, Collectors.counting()));
     }
 }

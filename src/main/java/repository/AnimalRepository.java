@@ -1,8 +1,10 @@
 package repository;
 
 import model.Animal;
+import model.Personality;
 
 import java.util.List;
+import java.util.Map;
 
 // 아키텍처 확장성을 고려하여 repository는 인터페이스로 생성
 public interface AnimalRepository {
@@ -27,4 +29,7 @@ public interface AnimalRepository {
 
     // 주민 수용 가능 인원을 초과하였는지 체크
     void isFull();
+
+    // 주민 성격별 숫자 조회
+    Map<Personality, Long> findAnimalsGroupByPersonality();
 }

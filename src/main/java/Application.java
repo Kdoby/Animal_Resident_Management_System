@@ -45,6 +45,9 @@ public class Application {
                         String name = animalView.readLine("Enter name you want to find: ");
                         animalController.getAnimalByName(name);
                         break;
+                    case 7:
+                        animalController.getAnimalsGroupByPersonality();
+                        break;
                     case 0:
                         animalView.displayMessage("프로그램을 종료합니다.");
                         return;

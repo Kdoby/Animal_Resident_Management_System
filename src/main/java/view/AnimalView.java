@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class AnimalView {
@@ -38,6 +39,7 @@ public class AnimalView {
         System.out.println("4. Find An Animal");
         System.out.println("5. Find All Animals");
         System.out.println("6. Search Animal By Name");
+        System.out.println("7. Show Animal Personality Statistics");
         System.out.println("0. Exit");
     }
 
@@ -142,6 +144,20 @@ public class AnimalView {
             } catch (DateTimeParseException e) {
                 displayError("올바른 생년월일을 입력해주세요. (예: 2026-08-18)");
             }
+        }
+    }
+
+    // 성격별 주민 수 통계 출력 (등록된 동물이 없는 성격도 0명으로 표시)
+    public void displayPersonalityStatistics(Map<Personality, Long> statistics) {
+
+        System.out.println("=====================================");
+        System.out.println("      Personality Statistics         ");
+        System.out.println("=====================================");
+
+        for (Personality personality : Personality.values()) {
+            // 등록된 동물이 없으면 default value 0으로 처리
+            long count = statistics.getOrDefault(personality, 0L);
+            System.out.printf("%-10s : %d명%n", personality, count);
         }
     }
 

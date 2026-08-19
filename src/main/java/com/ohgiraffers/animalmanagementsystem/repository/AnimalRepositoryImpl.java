@@ -1,10 +1,10 @@
-package repository;
+package com.ohgiraffers.animalmanagementsystem.repository;
 
-import exception.AnimalCapacityExceedException;
-import exception.AnimalNotFoundException;
-import model.Animal;
-import model.Gender;
-import model.Personality;
+import com.ohgiraffers.animalmanagementsystem.exception.AnimalCapacityExceedException;
+import com.ohgiraffers.animalmanagementsystem.exception.AnimalNotFoundException;
+import com.ohgiraffers.animalmanagementsystem.model.Animal;
+import com.ohgiraffers.animalmanagementsystem.model.Gender;
+import com.ohgiraffers.animalmanagementsystem.model.Personality;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

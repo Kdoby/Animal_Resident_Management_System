@@ -1,10 +1,12 @@
-import controller.AnimalController;
-import exception.AnimalCapacityExceedException;
-import exception.AnimalNotFoundException;
-import model.Animal;
-import model.Gender;
-import model.Personality;
-import view.AnimalView;
+package com.ohgiraffers.animalmanagementsystem;
+
+import com.ohgiraffers.animalmanagementsystem.controller.AnimalController;
+import com.ohgiraffers.animalmanagementsystem.exception.AnimalCapacityExceedException;
+import com.ohgiraffers.animalmanagementsystem.exception.AnimalNotFoundException;
+import com.ohgiraffers.animalmanagementsystem.model.Animal;
+import com.ohgiraffers.animalmanagementsystem.model.Gender;
+import com.ohgiraffers.animalmanagementsystem.model.Personality;
+import com.ohgiraffers.animalmanagementsystem.view.AnimalView;
 
 import java.time.LocalDate;
 

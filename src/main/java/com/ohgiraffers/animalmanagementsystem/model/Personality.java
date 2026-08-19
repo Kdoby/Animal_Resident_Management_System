@@ -1,4 +1,4 @@
-package model;
+package com.ohgiraffers.animalmanagementsystem.model;
 
 public enum Personality {
     LAZY,       // 먹보

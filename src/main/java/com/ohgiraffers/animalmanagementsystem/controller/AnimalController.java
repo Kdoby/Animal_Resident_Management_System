@@ -1,10 +1,9 @@
-package controller;
+package com.ohgiraffers.animalmanagementsystem.controller;
 
-import exception.AnimalNotFoundException;
-import model.Animal;
-import repository.AnimalRepository;
-import repository.AnimalRepositoryImpl;
-import view.AnimalView;
+import com.ohgiraffers.animalmanagementsystem.model.Animal;
+import com.ohgiraffers.animalmanagementsystem.repository.AnimalRepository;
+import com.ohgiraffers.animalmanagementsystem.repository.AnimalRepositoryImpl;
+import com.ohgiraffers.animalmanagementsystem.view.AnimalView;
 
 public class AnimalController {
 

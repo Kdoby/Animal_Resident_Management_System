@@ -1,4 +1,4 @@
-package exception;
+package com.ohgiraffers.animalmanagementsystem.exception;
 
 public class AnimalNotFoundException extends RuntimeException {
     public AnimalNotFoundException() {

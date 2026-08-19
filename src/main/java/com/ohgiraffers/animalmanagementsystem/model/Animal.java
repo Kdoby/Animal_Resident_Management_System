@@ -1,4 +1,4 @@
-package model;
+package com.ohgiraffers.animalmanagementsystem.model;
 
 import java.time.LocalDate;
 

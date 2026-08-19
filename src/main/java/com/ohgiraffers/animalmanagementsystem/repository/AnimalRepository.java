@@ -1,7 +1,7 @@
-package repository;
+package com.ohgiraffers.animalmanagementsystem.repository;
 
-import model.Animal;
-import model.Personality;
+import com.ohgiraffers.animalmanagementsystem.model.Animal;
+import com.ohgiraffers.animalmanagementsystem.model.Personality;
 
 import java.util.List;
 import java.util.Map;

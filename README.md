@@ -90,7 +90,7 @@ src/main/java/
 이렇게 하면 `AnimalController`와 `AnimalRepositoryImpl`의 각 메소드는 자기 예외를 직접 잡지 않고 그냥 던지기만 하면 되고, 예외를 어떻게 보여줄지는 오직 한 곳(`Application`)에서만
 결정합니다.
 
-### 4-2. 정원 체크를 입력받기 전에 먼저 한다
+### 4-2. 정원(최대 10명) 체크 시점
 
 `save()` 시점에만 정원을 체크하면, 사용자가 이름·성격·생년월일 등 6개 항목을 다 입력한 뒤에야 "정원이 다 찼습니다"라는 예외를 만나게 됩니다. 그래서 `registerAnimal()`에서 입력을 받기
 직전에 `animalController.checkAnimalCapacity()`를 먼저 호출해, 정원이 가득 찬 경우 아무 입력도 받지 않고 바로 예외를 던지도록 했습니다. `AnimalRepositoryImpl.save()` 내부의
@@ -115,16 +115,6 @@ public Animal searchByName(String name) {
 }
 ```
 
-### 4-5. `findAll()`은 원본 대신 복사본을 돌려준다
-
-```java
-public List<Animal> findAll() {
-    return new ArrayList<>(animals);
-}
-```
-
-호출자가 반환받은 리스트에 `add`/`remove`를 해도 내부 `animals` 리스트의 구조는 안전하게 보호됩니다. (다만 리스트 안의 `Animal` 객체 자체는 setter가 열려 있어 완전한 불변은 아니며,
-현재 규모의 프로젝트에서는 이 정도 방어로 충분하다고 판단했습니다.)
 
 <br>
 

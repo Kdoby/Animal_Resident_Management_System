@@ -81,16 +81,10 @@ src/main/java/com/ohgiraffers/animalmanagementsystem/
 `AnimalCapacityExceedException`을 던지고, `Application.main()`의 메뉴 분기 바깥에 있는 단 하나의 try-catch에서 이를 함께 잡아 사용자에게 안내합니다.
 
 ```java
-}catch(AnimalNotFoundException |
-AnimalCapacityExceedException e){
-        animalView.
-
-displayError(e.getMessage());
-        }catch(
-Exception e){
-        System.out.
-
-println("알 수 없는 에러가 발생했습니다. 다시 입력해주세요.");
+} catch(AnimalNotFoundException | AnimalCapacityExceedException e) {
+  animalView.displayError(e.getMessage());
+} catch(Exception e) {
+  System.out.println("알 수 없는 에러가 발생했습니다. 다시 입력해주세요.");
 }
 ```
 

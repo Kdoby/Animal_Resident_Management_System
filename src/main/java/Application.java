@@ -17,6 +17,7 @@ public class Application {
 
         System.out.println("Welcome to Animal Management");
 
+        // 전역 에러핸들러 역할
         while (true) {
 
             animalView.displayMainMenu();
@@ -124,6 +125,7 @@ public class Application {
         // 현재 정보 조회
         animalController.getAnimalById(id);
 
+        // 삭제 여부 다시 한 번 체크
         while (true) {
             String confirm = animalView.readLine("정말 삭제하시겠습니까? (Y / N)");
 
@@ -135,6 +137,7 @@ public class Application {
                 return;
             }
 
+            // 올바르지 않은 입력 값 예외 처리
             animalView.displayError("Y/N 중 하나를 선택하세요");
         }
     }

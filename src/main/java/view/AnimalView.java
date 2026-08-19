@@ -70,6 +70,7 @@ public class AnimalView {
 
     public int readInt(String prompt) {
 
+        // 올바른 값이 들어올 때까지 반복
         while (true) {
             System.out.print(prompt);
             String input = scanner.nextLine().trim();
@@ -84,6 +85,7 @@ public class AnimalView {
 
     public String readLine(String prompt) {
 
+        // 빈 값이 들어오는 것을 방지
         while (true) {
             System.out.println(prompt);
             String input = scanner.nextLine().trim();
@@ -103,6 +105,7 @@ public class AnimalView {
             System.out.print(prompt);
             String personality = scanner.nextLine();
 
+            // String 타입의 Input을 ENUM 타입의 value와 비교하여 올바른 성격 값이 들어온건지 체크
             try {
                 return Personality.valueOf(personality.toUpperCase());
             } catch (IllegalArgumentException e) {
@@ -128,6 +131,8 @@ public class AnimalView {
 
     public LocalDate readBirth(String prompt) {
 
+        // readInt의 로직과 똑같이 parsing 과정에서 발생하는 예외를 처리
+        // 올바르지 않은 날짜 형식이 들어온 경우 예외를 던짐
         while (true) {
             System.out.print(prompt);
             String birth = scanner.nextLine();
@@ -140,6 +145,7 @@ public class AnimalView {
         }
     }
 
+    // 동물 상세 정보 출력
     private void printAnimalDetail(Animal animal) {
 
         System.out.println("name : " + animal.getName());
